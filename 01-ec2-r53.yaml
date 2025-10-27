@@ -3,7 +3,7 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sgr-05260c60f05a6c3bd
+    sg_id: sg-09dd70d0e55355d39
     zone_id: "Z0948150OFPSYTNVYZOY"
     domain_name: "daws86s.fun"
     instances:
