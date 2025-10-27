@@ -6,7 +6,6 @@
    sg_id: sgr-05260c60f05a6c3bd
    zone_id: "Z0948150OFPSYTNVYZOY"
    domain_name: "daws86s.fun"
-
    instances:
     - mongodb
   tasks:
@@ -21,6 +20,6 @@
      loop: "{{ instances }}"    
      register: ec2_output
 
-- name: print ec2 output
+- name: print the ec2 output
   ansible.builtin.debug:
     msg: "{{ ec2_output }}"
