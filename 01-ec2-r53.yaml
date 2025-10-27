@@ -8,19 +8,18 @@
     domain_name: "daws86s.fun"
     instances:
     - mongodb
-  
-    tasks:
+  tasks:
     - name: create ec2 instances
       amazon.aws.ec2_Instance:
         name: "{{ item}}"
         instance_type: t3.micro
         security_group: "{{ sg_id}}"
-  #     image_id: "{{ ami_id }}"
-  #     tags: 
-  #        name: "{{ item }}"
-  #   loop: "{{ instances }}"    
-  #   register: ec2_output
+        image_id: "{{ ami_id }}"
+      tags: 
+         name: "{{ item }}"
+         loop: "{{ instances }}"    
+         register: ec2_output
 
-  # - name: print the ec2 output
-  #   ansible.builtin.debug:
-  #     msg: "{{ ec2_output }}"
+    - name: print the ec2 output
+      ansible.builtin.debug:
+      msg: "{{ ec2_output }}"
