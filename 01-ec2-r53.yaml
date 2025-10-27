@@ -6,7 +6,7 @@
     sg_id: sg-09dd70d0e55355d39
     zone_id: "Z00613851PSQYGT6JZU9Y"
     domain_name: "daws86s.fun"
-    instances:
+    instance:
     - mongodb
   tasks:
     - name: create ec2 instances
