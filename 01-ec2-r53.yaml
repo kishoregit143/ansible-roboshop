@@ -3,17 +3,14 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-09dd70d0e55355d39
-    zone_id: Z00613851PSQYGT6JZU9Y
-    domain_name: daws86s.fun
-     we can pass instances through command line using -e
+    sg_id: sg-09dd70d0e55355d39 # replace with your SG ID
+    zone_id: "Z00613851PSQYGT6JZU9Y" # replace with your ID
+    domain_name: "daws86s.fun"
+    # we can pass instances through command line using -e
     instances: 
      - mongodb
-     - redis
-     - mysql
-     - rabbitmq
-  tasks:
-  - name: create ec2 instance
+    tasks:
+    - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
       instance_type: t3.micro
@@ -23,3 +20,7 @@
         Name: "{{ item }}"
     loop: "{{ instances }}"
     register: ec2_output
+
+- name: print the ec2_output
+  ansible.builtin.debug:
+    msg: "{{ ec2_output }}" 
