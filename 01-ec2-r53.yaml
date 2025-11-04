@@ -40,7 +40,7 @@
 
   - name: create route53 record
     amazon.aws.route53:
-      state: present
+      state: absent
       zone: "{{ domain_name }}"
       record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws86s.fun
       type: A
