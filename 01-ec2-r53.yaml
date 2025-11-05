@@ -6,12 +6,12 @@
     sg_id: sg-09dd70d0e55355d39 # replace with your SG ID
     zone_id: "Z00613851PSQYGT6JZU9Y" # replace with your ID
     domain_name: "daws86s.fun"
-    # we can pass instances through command line using -e
-    instances: 
-    # - mongodb
-    - redis
-    - mysql
-    - rabbitmq
+    # # we can pass instances through command line using -e
+    # instances: 
+    # # - mongodb
+    # - redis
+    # - mysql
+    # - rabbitmq
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
